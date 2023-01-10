@@ -1,1 +1,12 @@
-console.log('Hello world');
+const express = require('express');
+
+const app = express();
+
+app.use(express.json());
+
+const port: number = 4090;
+const server = app.listen(port, () => {
+    console.log(`Server running on port ${port}`);
+});
+
+module.exports = server;
