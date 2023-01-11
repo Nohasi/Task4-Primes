@@ -16,7 +16,7 @@ export const invalidRequest = (req: any) => {
     }
 
     // number variable to be used in coming checks
-    const reqNo: Number = Number(req.query.number);
+    const reqNo: number = Number(req.query.number);
 
     // Checks if number passed is a negative, 0, or 1
     if(reqNo <= 1){
@@ -24,7 +24,7 @@ export const invalidRequest = (req: any) => {
     }
 
     // Makes sure numbers passed through are not too big
-    if(reqNo > 1000000000){
+    if(reqNo > 9_999_999){
         return 'Number passed is too large'
     }
 
