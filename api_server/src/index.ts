@@ -9,7 +9,6 @@ const app = express();
 app.use(express.json());
 
 app.get('/prime', (req: any, res: any) => {
-    console.log(req.query);
     let errorMessage: string | null = invalidRequest(req);
 
     // If error message is a string, an error has been found
