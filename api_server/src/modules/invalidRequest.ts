@@ -15,9 +15,9 @@ export const invalidRequest = (req: any) => {
         return "Non-number is passed"
     }
 
-    // Checks if number passed is a zero or negative
-    if(Number(req.query.number) <= 0){
-        return '0 or Negative number passed'
+    // Checks if number passed is a negative, 0, or 1
+    if(Number(req.query.number) <= 1){
+        return `${req.query.number} is neither prime nor composite`
     }
 
     return null;
