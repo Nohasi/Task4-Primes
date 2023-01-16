@@ -1,25 +1,23 @@
-.App {
-  display: flex;
-  justify-content: center;
-  margin-top: 5rem;
+.header {
+  width: 100%;
+  padding: 2%;
+  background-color: burlywood;
+  color: white;
+  text-align: center;
 }
-input {
-  display: block;
-  width: 20rem;
-  height: 2rem;
-  padding: 0.5rem;
-  font-size: 1.1em;
-  font-weight: 500;
-  margin-bottom: 2rem;
+
+.display-board {
+  width: 100%;
+  background-color: rgb(555, 200, 789);
+  padding: 5%;
 }
-button {
-  border: none;
-  padding: 1rem;
-  width: 21.2rem;
-  font-size: 1.2em;
-  border-radius: 0.2rem;
-  cursor: pointer;
+
+.number {
+  color: black;
+  font-size: 75px;
+  text-align: center;
 }
-button:hover {
-  background-color: #c5c5c5;
+
+.mrgnbtm {
+  margin-top: 20px;
 }
