@@ -1,5 +1,5 @@
 import { useState } from "react";
-export const PrimesForm = (num: any, setNum: any) => {
+export const PrimesForm = ({num, setNum}: {num: string, setNum: React.Dispatch<React.SetStateAction<string>>}) => {
     return (
         <div className="container">
             <div className="row">
