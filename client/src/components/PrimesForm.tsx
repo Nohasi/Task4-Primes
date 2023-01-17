@@ -1,12 +1,26 @@
 import React from "react";
 import { getPrimeResult } from "../services/GetPrimeResult";
 
-export const PrimesForm = ({num, setNum}: {num: string, setNum: React.Dispatch<React.SetStateAction<string>>}) => {
-    
+export const PrimesForm = ({num, setNum, setPrimeStatus, setFactors, setPrimeFactors}: 
+    {num: string, setNum: React.Dispatch<React.SetStateAction<string>>, 
+        setPrimeStatus: React.Dispatch<React.SetStateAction<string>>,
+        setFactors: React.Dispatch<React.SetStateAction<number[]>>,
+        setPrimeFactors: React.Dispatch<React.SetStateAction<number[]>>}) => {
+
+    // Function that calls service
     const getResult = (e: any) => {
         e.preventDefault();
         getPrimeResult(num).then((response: any) => {
-            console.log(response);
+            try{
+                console.log(response.allFactors);
+                setPrimeStatus(String(response.isPrime));
+                setFactors(response.allFactors);
+                setPrimeFactors(response.primeFactors);
+            }
+            catch {
+                console.log(response.error);
+                // TODO error handling
+            }
         })
     }
 
@@ -22,6 +36,7 @@ export const PrimesForm = ({num, setNum}: {num: string, setNum: React.Dispatch<R
                                 value={num} 
                                 // pattern makes sure only numbers can be input into the text field
                                 pattern="[0-9]*"
+                                // maxLength so the largest number that can be input is 9,999,999
                                 maxLength={7}
                                 placeholder="Enter Number Here" 
                                 // shorthand statement that doesn't call setnum if input is not number

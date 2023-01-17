@@ -1,20 +1,21 @@
-export const DisplayResults = () => {
+export const DisplayResults = ({primeStatus, factors, primeFactors}: 
+    {primeStatus: string, factors: number[], primeFactors: number[]}) => {
     return (
         <div className="container">
             <h2>Results:</h2>
-            <table style={{minWidth: 400, maxWidth: 400, borderCollapse: 'separate', borderSpacing: '0px 4px'}}>
-                <tbody>
+            <table className="table table-bordered">
+                <thead>
                 <tr>
-                    <th>Input</th>
                     <th>Prime</th>
                     <th>Factors</th>
                     <th>Prime Factors</th>    
                 </tr>
+                </thead>
+                <tbody>
                 <tr>
-                    <td>12</td>
-                    <td>False</td>
-                    <td>[1, 2, 3, 4, 6, 12]</td>
-                    <td>[2, 3]</td>
+                    <td>{primeStatus}</td>
+                    <td>{factors}</td>
+                    <td>{primeFactors}</td>
                 </tr>
                 </tbody>
             </table>

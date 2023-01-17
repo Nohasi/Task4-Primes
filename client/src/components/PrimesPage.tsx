@@ -7,6 +7,10 @@ import { useState } from "react";
 
 export const PrimesPage = () => {
         let [num, setNum] = useState('');
+        let [primeStatus, setPrimeStatus] = useState('');
+        let [factors, setFactors] = useState(Array<number>());
+        let [primeFactors, setPrimeFactors] = useState(Array<number>());
+
     return (
         <div className="App">
             <Header></Header>
@@ -16,6 +20,9 @@ export const PrimesPage = () => {
                         <PrimesForm 
                             num={num}
                             setNum={setNum}
+                            setPrimeStatus={setPrimeStatus}
+                            setFactors={setFactors}
+                            setPrimeFactors={setPrimeFactors}
                         />
                     </div>
                     <div className="col-md-4">
@@ -27,7 +34,11 @@ export const PrimesPage = () => {
             </div>
             <div className="container mrgnbtm">
                 <div className="row mrgnbtm">
-                    <DisplayResults />
+                    <DisplayResults
+                        primeStatus={primeStatus}
+                        factors={factors}
+                        primeFactors={primeFactors}
+                    />
                 </div>
             </div>
         </div>

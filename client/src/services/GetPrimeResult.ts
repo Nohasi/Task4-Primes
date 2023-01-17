@@ -6,7 +6,7 @@ export const getPrimeResult = async (num: string) =>{
             headers:{'Accept': 'application/json'}
         });
 
-        return await response;
+        return await response.json();
     }
     catch (error){
         console.log('error: Could not connect to API server');
