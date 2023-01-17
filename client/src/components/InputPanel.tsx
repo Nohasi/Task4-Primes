@@ -1,10 +1,10 @@
 import React from "react";
 
 export const InputPanel = ({num}: {num: string}) => {
-    // So that the panel displays 0 as a default if user has not entered anything yet
+    // So that the panel displays none as a default if user has not entered anything yet
     let defaultOutput: string = '';
     if(num === ''){
-        defaultOutput = '0';
+        defaultOutput = 'None';
     }
     else {
         defaultOutput = num;

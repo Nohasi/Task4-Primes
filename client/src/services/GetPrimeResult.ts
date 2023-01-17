@@ -1,4 +1,4 @@
-export const getPrimeResult = async (num: number) =>{
+export const getPrimeResult = async (num: string) =>{
     try{
         const response = await fetch(`prime?number=${num}`, {
             method: 'GET',
@@ -6,11 +6,7 @@ export const getPrimeResult = async (num: number) =>{
             headers:{'Accept': 'application/json'}
         });
 
-        let resJson = await response.json();
-
-        if (response.status === 200){
-
-        }
+        return await response;
     }
     catch (error){
         console.log('error: Could not connect to API server');

@@ -3,6 +3,7 @@ export const DisplayResults = () => {
         <div className="container">
             <h2>Results:</h2>
             <table style={{minWidth: 400, maxWidth: 400, borderCollapse: 'separate', borderSpacing: '0px 4px'}}>
+                <tbody>
                 <tr>
                     <th>Input</th>
                     <th>Prime</th>
@@ -15,6 +16,7 @@ export const DisplayResults = () => {
                     <td>[1, 2, 3, 4, 6, 12]</td>
                     <td>[2, 3]</td>
                 </tr>
+                </tbody>
             </table>
 
         </div>
