@@ -6,10 +6,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState } from "react";
 
 export const PrimesPage = () => {
-        let [num, setNum] = useState('');
-        let [primeStatus, setPrimeStatus] = useState('');
-        let [factors, setFactors] = useState(Array<number>());
-        let [primeFactors, setPrimeFactors] = useState(Array<number>());
+    // Setting states to be used in components
+    let [num, setNum] = useState('');
+    let [primeStatus, setPrimeStatus] = useState('');
+    let [factors, setFactors] = useState(Array<number>());
+    let [primeFactors, setPrimeFactors] = useState(Array<number>());
 
     return (
         <div className="App">

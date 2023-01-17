@@ -11,12 +11,13 @@ export const PrimesForm = ({num, setNum, setPrimeStatus, setFactors, setPrimeFac
     const getResult = (e: any) => {
         e.preventDefault();
         getPrimeResult(num).then((response: any) => {
+            // If status is 200, valid number has been passed
             if(response.status === 200){
                 setPrimeStatus(String(response.isPrime));
                 setFactors(response.allFactors);
                 setPrimeFactors(response.primeFactors);
             }
-            else{
+            else{ // if not, an error is returned
                 setPrimeStatus(`Error: ${response.error}`);
             }
         })
