@@ -11,15 +11,13 @@ export const PrimesForm = ({num, setNum, setPrimeStatus, setFactors, setPrimeFac
     const getResult = (e: any) => {
         e.preventDefault();
         getPrimeResult(num).then((response: any) => {
-            try{
-                console.log(response.allFactors);
+            if(response.status === 200){
                 setPrimeStatus(String(response.isPrime));
                 setFactors(response.allFactors);
                 setPrimeFactors(response.primeFactors);
             }
-            catch {
-                console.log(response.error);
-                // TODO error handling
+            else{
+                setPrimeStatus(`Error: ${response.error}`);
             }
         })
     }

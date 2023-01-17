@@ -21,3 +21,7 @@
 .mrgnbtm {
   margin-top: 20px;
 }
+
+tr.same-col-widths th {
+  width: 30%;
+}

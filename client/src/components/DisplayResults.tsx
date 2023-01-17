@@ -1,11 +1,27 @@
 export const DisplayResults = ({primeStatus, factors, primeFactors}: 
     {primeStatus: string, factors: number[], primeFactors: number[]}) => {
+    let factorsDisplay = '';
+    let primeFactorsDisplay = '';
+    if(primeStatus === 'false'){
+        for(let i = 0; i < factors.length; i++){
+            factorsDisplay += `${factors[i]} `;
+        }
+        for(let i = 0; i < primeFactors.length; i++){
+            primeFactorsDisplay += `${primeFactors[i]} `;
+        }
+    }
+    else{
+        factorsDisplay = 'none';
+        primeFactorsDisplay = 'none';
+    }
+
     return (
         <div className="container">
             <h2>Results:</h2>
-            <table className="table table-bordered">
+            <table className="table table-bordered table-fixed table-sm same-col-widths">
                 <thead>
-                <tr>
+                    {/* Styling to make all columns the same width */}
+                <tr className="same-col-widths">
                     <th>Prime</th>
                     <th>Factors</th>
                     <th>Prime Factors</th>    
@@ -14,8 +30,8 @@ export const DisplayResults = ({primeStatus, factors, primeFactors}:
                 <tbody>
                 <tr>
                     <td>{primeStatus}</td>
-                    <td>{factors}</td>
-                    <td>{primeFactors}</td>
+                    <td>{factorsDisplay}</td>
+                    <td>{primeFactorsDisplay}</td>
                 </tr>
                 </tbody>
             </table>
