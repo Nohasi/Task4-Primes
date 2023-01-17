@@ -15,6 +15,7 @@ app.get('/prime', (req: any, res: any) => {
     if(errorMessage != null){
         res.status(406);
         res.send({
+            status: 406,
             error: errorMessage            
         });
     }
@@ -24,6 +25,7 @@ app.get('/prime', (req: any, res: any) => {
         if(primeFlag){
             res.status(200);
             res.send({
+                status: 200,
                 input: Number(req.query.number),
                 isPrime: primeFlag,
                 allFactors: null,
@@ -34,6 +36,7 @@ app.get('/prime', (req: any, res: any) => {
         else{
             res.status(200);
             res.send({
+                status: 200,
                 input: Number(req.query.number),
                 isPrime: primeFlag,
                 allFactors: factorArray,

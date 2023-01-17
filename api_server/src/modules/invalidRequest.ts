@@ -24,8 +24,8 @@ export const invalidRequest = (req: any) => {
     }
 
     // Makes sure numbers passed through are not too big
-    if(reqNo > 10_000_000){
-        return 'Number passed is larger than 10,000,000'
+    if(reqNo >= 10_000_000){
+        return 'Number passed is larger than or equal to 10,000,000'
     }
 
     //Checks if number passed is a float
