@@ -1,19 +1,13 @@
+import { BuildFactorDisplays } from "../services/BuildFactorDisplays";
+
 export const DisplayResults = ({primeStatus, factors, primeFactors}: 
     {primeStatus: string, factors: number[], primeFactors: number[]}) => {
+    // Variables that will end up being displayed
     let factorsDisplay = '';
     let primeFactorsDisplay = '';
-    if(primeStatus === 'false'){
-        for(let i = 0; i < factors.length; i++){
-            factorsDisplay += `${factors[i]} `;
-        }
-        for(let i = 0; i < primeFactors.length; i++){
-            primeFactorsDisplay += `${primeFactors[i]} `;
-        }
-    }
-    else{
-        factorsDisplay = 'none';
-        primeFactorsDisplay = 'none';
-    }
+
+    // Function that determines whether factors will be displayed or not based on primeStatus
+    [factorsDisplay, primeFactorsDisplay] = BuildFactorDisplays({primeStatus, factors, primeFactors, factorsDisplay, primeFactorsDisplay});
 
     return (
         <div className="container">
