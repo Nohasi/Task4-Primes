@@ -23,6 +23,7 @@ export const PrimesForm = ({num, setNum, setPrimeStatus, setFactors, setPrimeFac
                 setErrorMsg('');
             }
             else{ // if not, an error is returned
+                setPrimeStatus('error');
                 setErrorStatus(true);
                 setErrorMsg(`Error: ${response.error}`);
             }
