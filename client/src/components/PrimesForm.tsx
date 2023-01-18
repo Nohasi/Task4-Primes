@@ -1,11 +1,14 @@
 import React from "react";
 import { getPrimeResult } from "../services/GetPrimeResult";
 
-export const PrimesForm = ({num, setNum, setPrimeStatus, setFactors, setPrimeFactors}: 
+export const PrimesForm = ({num, setNum, setPrimeStatus, setFactors, setPrimeFactors, setErrorMsg, setErrorStatus}: 
     {num: string, setNum: React.Dispatch<React.SetStateAction<string>>, 
         setPrimeStatus: React.Dispatch<React.SetStateAction<string>>,
         setFactors: React.Dispatch<React.SetStateAction<number[]>>,
-        setPrimeFactors: React.Dispatch<React.SetStateAction<number[]>>}) => {
+        setPrimeFactors: React.Dispatch<React.SetStateAction<number[]>>,
+        setErrorMsg:React.Dispatch<React.SetStateAction<string>>,
+        setErrorStatus: React.Dispatch<React.SetStateAction<boolean>>
+    }) => {
 
     // Function that calls service
     const getResult = (e: any) => {
@@ -16,9 +19,12 @@ export const PrimesForm = ({num, setNum, setPrimeStatus, setFactors, setPrimeFac
                 setPrimeStatus(String(response.isPrime));
                 setFactors(response.allFactors);
                 setPrimeFactors(response.primeFactors);
+                setErrorStatus(false);
+                setErrorMsg('');
             }
             else{ // if not, an error is returned
-                setPrimeStatus(`Error: ${response.error}`);
+                setErrorStatus(true);
+                setErrorMsg(`Error: ${response.error}`);
             }
         })
     }
