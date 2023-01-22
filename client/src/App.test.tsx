@@ -1,6 +1,5 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import App from './App';
 import { PrimesPage } from './components/PrimesPage';
 import { BuildFactorDisplays } from './services/BuildFactorDisplays';
 import { getPrimeResult } from './services/GetPrimeResult';
